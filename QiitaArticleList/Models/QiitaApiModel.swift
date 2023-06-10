@@ -9,10 +9,14 @@ import UIKit
 import Alamofire
 
 class QiitaApiModel {
+    
+    private let apiUrl:String = "https://qiita.com/api/v2/items"
+    
+    //?page=1&per_page=20&query=qiita+user%3AQiita
 
-    public func fetchArticles(completion:@escaping ([Article]) -> Void) {
+    public func fetchArticles(params:QiitaParameterModel?,completion:@escaping ([Article]) -> Void) {
         
-        AF.request("https://qiita.com/api/v2/items")
+        AF.request(self.apiUrl,method: .get,parameters: params)
             .responseData { response in
                 do {
                     let decoder = JSONDecoder()

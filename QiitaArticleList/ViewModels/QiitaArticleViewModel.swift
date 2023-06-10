@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class QiitaArticleViewModel:ObservableObject {
     
@@ -15,8 +16,8 @@ class QiitaArticleViewModel:ObservableObject {
  
     @Published var articles: [Article] = []
     
-    func setArticle(){
-        model.fetchArticles { array in
+    public func setArticle(params:QiitaParameterModel?){
+        model.fetchArticles(params: params) { array in
             self.articles = array
         }
     }

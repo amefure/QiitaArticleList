@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ListArticleView: View {
     
     @ObservedObject var qiitaArticleVM = QiitaArticleViewModel.shared
 
@@ -18,11 +18,9 @@ struct ContentView: View {
              RowArticleView(article: article)
             }
             
-            Button {
-                qiitaArticleVM.setArticle()
-            } label: {
-                Text("Button")
-            }
+        }.onAppear{
+            qiitaArticleVM.setArticle(params: QiitaParameterModel(page: 1, per_page: 2))
+//            qiitaArticleVM.setArticle(params: nil)
         }
     }
 }
