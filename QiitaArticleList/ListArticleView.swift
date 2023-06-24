@@ -19,7 +19,7 @@ struct ListArticleView: View {
             }
             
         }.onAppear{
-            qiitaArticleVM.setArticle(params: QiitaParameterModel(page: 1, per_page: 2))
+            qiitaArticleVM.setArticle(params: QiitaParameterModel(page: 1, per_page: 5,query: QiitaQueryModel.getString(type: .title,text: "基本情報技術者試験"))) //
 //            qiitaArticleVM.setArticle(params: nil)
         }
     }

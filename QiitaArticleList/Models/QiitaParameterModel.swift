@@ -10,10 +10,12 @@ import UIKit
 struct QiitaParameterModel: Encodable {
     let page: Int
     let per_page: Int
-
+    let query: String?
+    
     enum CodingKeys: String, CodingKey {
         case page
         case per_page
+        case query
     }
 }
 

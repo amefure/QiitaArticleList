@@ -12,11 +12,9 @@ class QiitaApiModel {
     
     private let apiUrl:String = "https://qiita.com/api/v2/items"
     
-    //?page=1&per_page=20&query=qiita+user%3AQiita
-
     public func fetchArticles(params:QiitaParameterModel?,completion:@escaping ([Article]) -> Void) {
         
-        AF.request(self.apiUrl,method: .get,parameters: params)
+        AF.request(apiUrl,method: .get,parameters: params)
             .responseData { response in
                 do {
                     let decoder = JSONDecoder()
