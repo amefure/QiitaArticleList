@@ -7,15 +7,16 @@
 
 import UIKit
 
-enum QiitaQueryModel:String, Encodable{
+enum QiitaQueryModel:String, Encodable,CaseIterable,Identifiable{
+    var id:String { self.rawValue }
     
     case title             // タイトルに指定の文字列が含まれる
     case body              // 本文に指定の文字列が含まれる
     case tag               // 指定のタグを持つ
     case notag = "-tag"    // 指定のタグを持たない
     case user              // 指定のユーザー
-    case created           // 作成日
-    case updated           // 更新日
+//    case created           // 作成日
+//    case updated           // 更新日
     case stocks            // ストック数
     
     static func getString(type:QiitaQueryModel,text:String) -> String{
