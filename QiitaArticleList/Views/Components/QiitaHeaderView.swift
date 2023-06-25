@@ -14,6 +14,7 @@ struct QiitaHeaderView: View {
             .padding()
             .foregroundColor(.white)
             .background(Color(red: 121/255, green: 196/255, blue: 83/255))
+            .font(.system(.title, design: .monospaced))
     }
 }
 

@@ -11,6 +11,7 @@ struct ListArticleView: View {
     
     @ObservedObject var qiitaArticleVM = QiitaArticleViewModel.shared
     @State var text:String = ""
+    @State var queryType:QiitaQueryModel = .title
     
     var body: some View {
         
@@ -18,7 +19,9 @@ struct ListArticleView: View {
             
             QiitaHeaderView()
             
-            QiitaSearchBoxView(text: $text)
+            QiitaSearchBoxView(text: $text,queryType: $queryType)
+            
+            QiitaQueryTypeButtonsView(queryType: $queryType)
             
             if qiitaArticleVM.articles.count != 0{
                 List(qiitaArticleVM.articles){ article in
