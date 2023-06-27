@@ -21,4 +21,8 @@ class QiitaArticleViewModel:ObservableObject {
             self.articles = array
         }
     }
+    
+    public func getString(type:QiitaQueryModel,text:String) -> String{
+        QiitaQueryModel.getString(type: type, text: text)
+    }
 }

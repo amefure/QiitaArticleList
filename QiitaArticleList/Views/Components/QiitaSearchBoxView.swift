@@ -42,7 +42,7 @@ struct QiitaSearchBoxView: View {
                 }
             
             Button {
-                qiitaArticleVM.setArticle(params: QiitaParameterModel(page: 1, per_page: 5,query: QiitaQueryModel.getString(type: queryType ,text: text)))
+                qiitaArticleVM.setArticle(params: QiitaParameterModel(page: 1, per_page: 5,query: qiitaArticleVM.getString(type: queryType ,text: text)))
             } label: {
                 Image(systemName: "magnifyingglass")
             }.padding(5)

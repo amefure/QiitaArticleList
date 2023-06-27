@@ -17,6 +17,7 @@ struct RowArticleView: View {
         HStack{
             AsyncImage(url: URL(string: article.user.profile_image_url)) { image in
                 image.resizable()
+                    .cornerRadius(30)
             } placeholder: {
                 ProgressView()
             }.frame(width: 30, height: 30)
